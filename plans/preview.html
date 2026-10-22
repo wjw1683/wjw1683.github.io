@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f4f5f7">
+<title>10月21日 · 每日计划</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+
+  :root {
+    --bg: #f4f5f7;
+    --card: #ffffff;
+    --ink: #1c1f26;
+    --ink-2: #5b6270;
+    --ink-3: #9aa1ae;
+    --line: #eceef1;
+    --am: #f0a03c;
+    --pm: #4b8bf5;
+    --nt: #8b7bf0;
+    --accent: #4b8bf5;
+  }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 28px 18px calc(36px + env(safe-area-inset-bottom));
+  }
+
+  /* 头部 */
+  .head { padding: 0 4px 20px; }
+
+  .head .date {
+    margin: 0 0 6px;
+    font-size: 13px;
+    letter-spacing: .04em;
+    color: var(--ink-3);
+  }
+
+  .head .title {
+    margin: 0 0 10px;
+    font-size: 27px;
+    line-height: 1.25;
+    font-weight: 650;
+    letter-spacing: -.01em;
+  }
+
+  .head .note {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink-2);
+  }
+
+  /* 分区卡片 */
+  .block {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 4px 16px 10px;
+    margin-bottom: 14px;
+    box-shadow: 0 1px 2px rgba(20, 26, 40, .04),
+                0 6px 18px rgba(20, 26, 40, .04);
+  }
+
+  .block-hd {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 2px 8px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex: 0 0 auto;
+  }
+  .dot.am { background: var(--am); }
+  .dot.pm { background: var(--pm); }
+  .dot.nt { background: var(--nt); }
+
+  .block-hd h2 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: .02em;
+  }
+
+  .block-hd .count {
+    margin-left: auto;
+    font-size: 12px;
+    color: var(--ink-3);
+  }
+
+  /* 任务行 */
+  .tasks {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .task {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 11px 2px;
+    border-top: 1px solid var(--line);
+  }
+
+  .tasks li:first-child .task { border-top: 0; }
+
+  .cb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 19px;
+    height: 19px;
+    margin: 2px 0 0;
+    flex: 0 0 auto;
+    border: 1.6px solid #c9cdd6;
+    border-radius: 6px;
+    background: transparent;
+    position: relative;
+  }
+
+  .cb:checked {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .cb:checked::after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 2.5px;
+    width: 4px;
+    height: 8.5px;
+    border: solid #fff;
+    border-width: 0 1.8px 1.8px 0;
+    transform: rotate(45deg);
+  }
+
+  .task .txt {
+    flex: 1 1 auto;
+    font-size: 15.5px;
+    line-height: 1.5;
+    color: var(--ink);
+    word-break: break-word;
+  }
+
+  .task .time {
+    flex: 0 0 auto;
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: var(--ink-3);
+    font-variant-numeric: tabular-nums;
+    padding-left: 6px;
+  }
+
+  /* 页脚 */
+  .foot {
+    padding: 6px 6px 0;
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--ink-3);
+    text-align: center;
+  }
+
+  /* 夜间模式 */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14161a;
+      --card: #1e2127;
+      --ink: #e9ecf2;
+      --ink-2: #a5acb9;
+      --ink-3: #737a87;
+      --line: #2a2e36;
+    }
+    .block { box-shadow: none; }
+    .cb { border-color: #3b414c; }
+  }
+</style>
+</head>
+<body>
+<main class="page">
+
+  <header class="head">
+    <p class="date">2026年10月21日 星期三</p>
+    <h1 class="title">今日计划</h1>
+    <p class="note">课业优先保进度，晚上留一段完整时间做技术学习。共 8 项。</p>
+  </header>
+
+  <section class="block">
+    <div class="block-hd">
+      <span class="dot am"></span>
+      <h2>上午</h2>
+      <span class="count">3 项</span>
+    </div>
+    <ul class="tasks">
+      <li>
+        <label class="task">
+          <input class="cb" type="checkbox">
+          <span class="txt">高等数学 第 4 章课后习题</span>
+          <span class="time">08:30</span>
+        </label>
+      </li>
+      <li>
+        <label class="task">
+          <input class="cb" type="checkbox">
+          <span class="txt">英语听力练习 20 分钟</span>
+          <span class="time">10:00</span>
+        </label>
+      </li>
+      <li>
+        <label class="task">
+          <input class="cb" type="checkbox">
+          <span class="txt">整理自动控制原理课堂笔记</span>
+          <span class="time">11:10</span>
+        </label>
+      </li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <div class="block-hd">
+      <span class="dot pm"></span>
+      <h2>下午</h2>
+      <span class="count">3 项</span>
+    </div>
+    <ul class="tasks">
+      <li>
+        <label class="task">
+          <input class="cb" type="checkbox">
+          <span class="txt">下午课程：电机与拖动</span>
+          <span class="time">14:00</span>
+        </label>
+      </li>
+      <li>
+        <label class="task">
+          <input class="cb" type="checkbox">
+          <span class="txt">完成课程作业并提交</span>
+          <span class="time">16:30</span>
+        </label>
+      </li>
+      <li>
+        <label class="task">
+          <input class="cb" type="checkbox">
+          <span class="txt">与同学讨论小组课题分工</span>
+          <span class="time">17:20</span>
+        </label>
+      </li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <div class="block-hd">
+      <span class="dot nt"></span>
+      <h2>晚上</h2>
+      <span class="count">2 项</span>
+    </div>
+    <ul class="tasks">
+      <li>
+        <label class="task">
+          <input class="cb" type="checkbox">
+          <span class="txt">PLC 仿真练习：定时器与计数器</span>
+          <span class="time">19:30</span>
+        </label>
+      </li>
+      <li>
+        <label class="task">
+          <input class="cb" type="checkbox">
+          <span class="txt">跑步 3 公里，回来早睡</span>
+          <span class="time">21:40</span>
+        </label>
+      </li>
+    </ul>
+  </section>
+
+  <p class="foot">示例内容，仅用于页面展示<br>勾选状态刷新后不保留</p>
+
+</main>
+</body>
+</html>
